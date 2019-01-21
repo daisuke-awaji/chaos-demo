@@ -146,19 +146,22 @@ class Regions extends React.Component {
           <span>　</span>
           <NginxLink nginxEndpointUrl={this.state.nginxEndpointUrl} />
         </Grid>
+
         <RegionBlock instances={this.state.instances} targetRegion="us-east-1a" />
         <RegionBlock instances={this.state.instances} targetRegion="us-east-1b" />
+
         <EC2StatusDescription />
+
         <Button size="medium" key="create-stack" color="primary" variant="outlined" onClick={() => this.clickCreateStackButton()}>
-          Create Stack 🏢
+          Create Stack ♨️
         </Button>
-        <span> </span>
+        <span style={{ paddingRight: 10 }}> </span>
         <Button size="medium" key="delete-stack" variant="outlined" onClick={() => this.clickDeleteStackButton()}>
-          Delete Stack 🚧
+          Delete Stack
         </Button>
 
         {/* <Chart data={this.state.nginxResponseCode} /> */}
-      </div>
+      </div >
     );
   }
 }
