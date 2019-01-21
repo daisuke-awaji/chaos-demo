@@ -13,7 +13,7 @@ class Cell extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div id={this.props.instance.instanceId}>
         <Tooltip title={
           this.props.instance ?
             this.props.instance.tagValue + " " + this.props.instance.instanceId + " " + this.props.instance.state :
