@@ -97,6 +97,12 @@ class Regions extends React.Component {
   clickRunChaosLambdaButton() {
     fetch('https://4uj77b30f4.execute-api.us-east-1.amazonaws.com/Prod/chaos-lambda/delete')
   }
+  clickCreateStackButton() {
+    fetch('https://4uj77b30f4.execute-api.us-east-1.amazonaws.com/Prod/cloudformation/create-stack')
+  }
+  clickDeleteStackButton() {
+    fetch('https://4uj77b30f4.execute-api.us-east-1.amazonaws.com/Prod/cloudformation/delete-stack')
+  }
 
   componentWillMount() {
     this.describeInstances();
@@ -143,6 +149,14 @@ class Regions extends React.Component {
         <RegionBlock instances={this.state.instances} targetRegion="us-east-1a" />
         <RegionBlock instances={this.state.instances} targetRegion="us-east-1b" />
         <EC2StatusDescription />
+        <Button size="medium" key="create-stack" color="primary" variant="outlined" onClick={() => this.clickCreateStackButton()}>
+          Create Stack 🏢
+        </Button>
+        <span> </span>
+        <Button size="medium" key="delete-stack" variant="outlined" onClick={() => this.clickDeleteStackButton()}>
+          Delete Stack 🚧
+        </Button>
+
         {/* <Chart data={this.state.nginxResponseCode} /> */}
       </div>
     );
