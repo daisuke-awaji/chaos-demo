@@ -153,7 +153,7 @@ class Regions extends React.Component {
         <EC2StatusDescription />
 
         <Button size="medium" key="create-stack" color="primary" variant="outlined" onClick={() => this.clickCreateStackButton()}>
-          Create Stack ♨️
+          Create Stack
         </Button>
         <span style={{ paddingRight: 10 }}> </span>
         <Button size="medium" key="delete-stack" variant="outlined" onClick={() => this.clickDeleteStackButton()}>
