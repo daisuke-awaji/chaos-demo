@@ -48,6 +48,24 @@ class Regions extends React.Component {
             instances.push(instanceData);
           })
         })
+        let testInstanceDataA = {
+          instanceId: "test",
+          instanceType: "t2medium",
+          tagValue: "test",
+          state: "terminate",
+          az: "us-east-1a"
+        };
+        let testInstanceDataB = {
+          instanceId: "test",
+          instanceType: "t2medium",
+          tagValue: "test",
+          state: "terminate",
+          az: "us-east-1b"
+        };
+        for (let i = 0; i < 5; i++) {
+          instances.push(testInstanceDataA);
+          instances.push(testInstanceDataB);
+        };
         this.setState({ instances: instances });
       }
     }.bind(this));
