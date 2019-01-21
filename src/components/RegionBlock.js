@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Cell from './Cell'
+import CellAnime from './CellAnime';
 
 class RegionBlock extends React.Component {
     render() {
@@ -19,7 +20,7 @@ class RegionBlock extends React.Component {
                             if (instance.az === this.props.targetRegion) {
                                 return (
                                     <Grid key={index} item xs={3} sm={2} lg={1} xl={1}>
-                                        <Cell key={index} instance={instance} />
+                                        <CellAnime key={index} instance={instance} />
                                     </Grid>
                                 )
                             }

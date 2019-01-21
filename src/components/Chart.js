@@ -3,7 +3,6 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 
 class Chart extends React.Component {
-
   render() {
     let data = [];
     this.props.data.forEach(function (d) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Cell from './Cell'
+import Cell from './Cell';
 
 class EC2StatusDescription extends React.Component {
     render() {
