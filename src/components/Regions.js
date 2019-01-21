@@ -3,6 +3,7 @@ import Cell from './Cell'
 import React from 'react';
 import NginxLink from './NginxLink'
 import Button from '@material-ui/core/Button';
+import EC2StatusDescription from './EC2StatusDescription';
 
 import AWS from 'aws-sdk'
 AWS.config.update({
@@ -148,12 +149,7 @@ class Regions extends React.Component {
           )())}
         </Grid>
 
-        <Grid
-          container
-          style={{ padding: 24 }}
-          spacing={24}
-        >
-        </Grid>
+        <Grid container style={{ padding: 24 }} spacing={24} />
 
         <Grid style={{ backgroundColor: '#ffa144', zIndex: 100, textAlign: 'center', color: 'white', borderRadius: 5 }} item xs={6} sm={4} lg={2} xl={1}>
           us-east-1b
@@ -176,59 +172,10 @@ class Regions extends React.Component {
           )())}
         </Grid>
 
-        <Grid
-          container
-          style={{ padding: 24 }}
-          spacing={24}
-        >
-        </Grid>
+        <Grid container style={{ padding: 24 }} spacing={24} />
 
-        <Grid
-          container
-          style={{ paddingTop: 0 }}
-          spacing={24}
-        >
-          <Grid item xs={3} sm={2} lg={2} xl={2}>
-            <Cell instance={{
-              instanceId: "",
-              instanceType: "",
-              tagValue: "",
-              state: "running",
-              az: ""
-            }} />
-            running
-          </Grid>
-          <Grid item xs={3} sm={2} lg={2} xl={2}>
-            <Cell instance={{
-              instanceId: "",
-              instanceType: "",
-              tagValue: "",
-              state: "terminated",
-              az: ""
-            }} />
-            terminated
-          </Grid>
-          <Grid item xs={3} sm={2} lg={2} xl={2}>
-            <Cell instance={{
-              instanceId: "",
-              instanceType: "",
-              tagValue: "",
-              state: "shutting-down",
-              az: ""
-            }} />
-            shutting-down
-          </Grid>
-          <Grid item xs={3} sm={2} lg={2} xl={2}>
-            <Cell instance={{
-              instanceId: "",
-              instanceType: "",
-              tagValue: "",
-              state: "pending",
-              az: ""
-            }} />
-            pending
-          </Grid>
-        </Grid>
+        <EC2StatusDescription />
+
         {/* <Chart data={this.state.nginxResponseCode} /> */}
       </div>
     );
