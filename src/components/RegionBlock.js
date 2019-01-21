@@ -1,6 +1,5 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Cell from './Cell'
 import CellAnime from './CellAnime';
 
 class RegionBlock extends React.Component {
