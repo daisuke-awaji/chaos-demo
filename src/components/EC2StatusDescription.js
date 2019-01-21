@@ -5,7 +5,7 @@ import Cell from './Cell'
 class EC2StatusDescription extends React.Component {
     render() {
         return (
-            <Grid container style={{ paddingTop: 0 }} spacing={24}>
+            <Grid container style={{ paddingTop: 24, paddingBottom: 24 }} spacing={24}>
                 <Grid item xs={3} sm={2} lg={2} xl={2}>
                     <Cell instance={{
                         instanceId: "",

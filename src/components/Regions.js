@@ -1,9 +1,9 @@
 import Grid from '@material-ui/core/Grid';
-import Cell from './Cell'
 import React from 'react';
 import NginxLink from './NginxLink'
 import Button from '@material-ui/core/Button';
 import EC2StatusDescription from './EC2StatusDescription';
+import RegionBlock from './RegionBlock';
 
 import AWS from 'aws-sdk'
 AWS.config.update({
@@ -114,68 +114,17 @@ class Regions extends React.Component {
 
   render() {
     return (
-
       <div style={{ padding: 24 }}>
-        <Grid
-          container
-          style={{ paddingBottom: 24 }}
-          spacing={24}
-        >
+        <Grid container style={{ paddingBottom: 24 }} spacing={24}>
           <Button disabled={this.state.instances.length < 2} size="medium" key="run-chaos-lambda-button" color="secondary" variant="outlined" onClick={() => this.clickRunChaosLambdaButton()}>
             <span role="img" aria-label="bolt">⚡️</span> Chaos Lambda <span role="img" aria-label="bolt">⚡️</span>
           </Button>
           <span>　</span>
           <NginxLink nginxEndpointUrl={this.state.nginxEndpointUrl} />
         </Grid>
-
-        <Grid style={{ backgroundColor: '#ffa144', zIndex: 100, textAlign: 'center', color: 'white', borderRadius: 5 }} item xs={6} sm={4} lg={2} xl={1}>
-          us-east-1a
-        </Grid>
-        <Grid
-          container
-          style={{ padding: 24, border: "thin solid #ffa144", borderRadius: 5 }}
-          spacing={24}
-        >
-          {this.state.instances.map((instance, index) => (
-            () => {
-              if (instance.az === "us-east-1a") {
-                return (
-                  <Grid key={index} item xs={3} sm={2} lg={1} xl={1}>
-                    <Cell key={index} instance={instance} />
-                  </Grid>
-                )
-              }
-            }
-          )())}
-        </Grid>
-
-        <Grid container style={{ padding: 24 }} spacing={24} />
-
-        <Grid style={{ backgroundColor: '#ffa144', zIndex: 100, textAlign: 'center', color: 'white', borderRadius: 5 }} item xs={6} sm={4} lg={2} xl={1}>
-          us-east-1b
-        </Grid>
-        <Grid
-          container
-          style={{ padding: 24, border: "thin solid #ffa144", borderRadius: 5 }}
-          spacing={24}
-        >
-          {this.state.instances.map((instance, index) => (
-            () => {
-              if (instance.az === "us-east-1b") {
-                return (
-                  <Grid key={index} item xs={3} sm={2} lg={1} xl={1}>
-                    <Cell key={index} instance={instance} />
-                  </Grid>
-                )
-              }
-            }
-          )())}
-        </Grid>
-
-        <Grid container style={{ padding: 24 }} spacing={24} />
-
+        <RegionBlock instances={this.state.instances} targetRegion="us-east-1a" />
+        <RegionBlock instances={this.state.instances} targetRegion="us-east-1b" />
         <EC2StatusDescription />
-
         {/* <Chart data={this.state.nginxResponseCode} /> */}
       </div>
     );
