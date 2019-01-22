@@ -1,8 +1,8 @@
 {
-  "short_name": "CHaos Demo",
+  "short_name": "Chaos Demo",
   "name": "Chaos Demo App",
   "icons": [{
-    "src": "./chaos-monkey.png",
+    "src": "public/chaos-monkey.png",
     "sizes": "64x64 32x32 24x24 16x16",
     "type": "image/png"
   }],
