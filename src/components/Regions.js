@@ -4,6 +4,7 @@ import NginxLink from './NginxLink'
 import Button from '@material-ui/core/Button';
 import EC2StatusDescription from './EC2StatusDescription';
 import RegionBlock from './RegionBlock';
+import { Link } from 'react-router-dom';
 
 import AWS from 'aws-sdk'
 AWS.config.update({
@@ -158,6 +159,15 @@ class Regions extends React.Component {
         <span style={{ paddingRight: 10 }}> </span>
         <Button size="medium" key="delete-stack" variant="outlined" onClick={() => this.clickDeleteStackButton()}>
           Delete Stack
+        </Button>
+
+        <Grid container style={{ padding: 24 }} spacing={24}>
+        </Grid>
+
+        <Button size="medium" key="delete-stack" variant="outlined" onClick={() => this.clickDeleteStackButton()}>
+          <Link style={{ textDecoration: 'none', color: 'black' }} to="/aframe">
+            🚀🚀🚀 A-frame VR (Beta) 🚀🚀🚀
+          </Link>
         </Button>
 
         {/* <Chart data={this.state.nginxResponseCode} /> */}
