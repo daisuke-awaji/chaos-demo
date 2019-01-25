@@ -112,7 +112,7 @@ class Regions extends React.Component {
   };
 
   componentDidMount() {
-    setInterval(() => { this.describeInstances() }, 1000);
+    setInterval(() => { this.describeInstances() }, 2000);
     // setInterval(() => {this.getNginxEndpointStatus(this.state.nginxEndpointUrl)}, 1000);
   }
 
@@ -164,9 +164,9 @@ class Regions extends React.Component {
         <Grid container style={{ padding: 24 }} spacing={24}>
         </Grid>
 
-        <Button size="medium" key="delete-stack" variant="outlined" onClick={() => this.clickDeleteStackButton()}>
+        <Button size="medium" key="aframe" variant="outlined" onClick={() => this.clickDeleteStackButton()}>
           <Link style={{ textDecoration: 'none', color: 'black' }} to="/aframe">
-            🚀🚀🚀 A-frame VR (Beta) 🚀🚀🚀
+            <span role="img" aria-label="rocket">🚀🚀🚀</span> A-frame VR (Beta) <span role="img" aria-label="rocket">🚀🚀🚀</span>
           </Link>
         </Button>
 
