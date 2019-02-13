@@ -95,7 +95,9 @@ class Aframe extends Component {
                             state: instance.State.Name,
                             az: instance.Placement.AvailabilityZone
                         }
-                        instances.push(instanceData);
+                        if (instanceData.state !== "terminated") {
+                            instances.push(instanceData);
+                        }
                     })
                 })
                 // let testInstanceDataA = {
