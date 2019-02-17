@@ -153,6 +153,9 @@ class Regions extends React.Component {
 
         <EC2StatusDescription />
 
+        <div>
+          APIGateway停止中...
+        </div>
         <Button size="medium" key="create-stack" color="primary" variant="outlined" onClick={() => this.clickCreateStackButton()}>
           Create Stack
         </Button>
